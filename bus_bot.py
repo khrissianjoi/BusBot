@@ -2,7 +2,7 @@ import requests
 import os
 
 
-import links
+import secrets
 
 link = os.environ.get('BUS_LINK')
 
