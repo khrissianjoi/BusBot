@@ -1,3 +1,1 @@
-secrets.py
-app.py
-server.py
+env_secrets.py
