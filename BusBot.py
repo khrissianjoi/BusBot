@@ -1,19 +1,20 @@
-import requests
 import os
-
+import requests
 
 import env_secrets
 
-link = os.environ.get('BusLink')
+
+LINK = os.environ.get('BusLink')
 
 ERROR_MESSAGES = ['Sorry human realtime information is currently unavailable', 'Sorry human, please enter a real bus stop number']
+
 def get_stop_number():
     return  str(input('please enter the stop number\n'))
 
 
 def get_request(current):
     '''returns json format and status code as a tuple'''
-    request = requests.get(link, params=current)
+    request = requests.get(LINK, params=current)
     if request.status_code != 200:
         return ERROR_MESSAGES[0]
     request_json = request.json()
@@ -35,4 +36,5 @@ def main():
             print(bus['route'] +' ' + bus['duetime'])
     else:
         print(response_json)
+
 main()
