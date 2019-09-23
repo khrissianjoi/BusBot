@@ -9,7 +9,7 @@ async function main() {
     const response = await axios.get(BusUrl, {params: current});
     const busTimes = response.data['results']
     busTimes.forEach(bus => {
-        console.log(bus['route'] + " " + bus['duetime'] )
+        console.log(bus['route'] + " " + bus['duetime'])
     });
 }
 
