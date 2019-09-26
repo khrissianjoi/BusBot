@@ -2,8 +2,9 @@ const axios = require('axios');
 
 async function main() {
     const BusUrl = process.env.BUSURL;
+    const bus_id = 4793;
     const current = {
-        stopid : 4793,
+        stopid : bus_id,
         format: 'json'
     };
     const response = await axios.get(BusUrl, {params: current});
